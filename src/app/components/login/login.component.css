@@ -1,0 +1,51 @@
+.app{
+    background-color: #001e44;
+}
+.header{
+    margin-top: 2px;
+    box-shadow: 2px 2px 5px rgb(121, 121, 121);
+    background-color: #fff!important;
+    flex: 1 1 auto;
+}
+
+.navbar-logo{
+    width: 190px;
+    margin: 5px;
+}
+
+.logo-urbe{
+    width: 180px;
+    margin: 5px;
+    margin-top: 08px;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.login{
+    width: 100%;
+    max-width: 330px;
+    text-align: center;
+    margin: 5px;
+}
+
+.width_class{
+    width: 80%;
+}
+
+.button{
+    height: 50px; ;
+}
+
+.footer{
+    background-color:   #af0d0d;
+    padding: 60px 40px;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
