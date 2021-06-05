@@ -19,23 +19,25 @@
         </div>
         <div class="body">
             <div class="login">
-               
-                    <mat-card class="login">
-                         <form [formGroup]="form" (ngSubmit)="validate()">
+
+                <mat-card class="login">
+                    <form [formGroup]="form">
                         <img src="../../../assets/img/user.png" width=50%>
                         <h1 class="">Iniciar Sesión</h1>
                         <mat-form-field class="width_class" appearance="fill">
                             <mat-label>Usuario</mat-label>
-                            <input type="text" name="userId"  onkeypress="" matInput autocomplete="off" formControlName="user">
+                            <input type="text" name="userId" onkeypress="" matInput autocomplete="off"
+                                formControlName="usuario">
                         </mat-form-field>
                         <mat-form-field class="width_class" appearance="fill">
                             <mat-label>Contraseña</mat-label>
-                            <input type="password" matInput autocomplete="off" formControlName="password">
+                            <input type="password" matInput autocomplete="off" formControlName="clave">
                         </mat-form-field>
                         <br>
-                        <button class="width_class button" type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Ingresar</button>
-                   </form>
-                 </mat-card>
+                        <button type="button" (click)="sendData(form.value)" class="width_class button"
+                            mat-raised-button color="primary" [disabled]="form.invalid">Ingresar</button>
+                    </form>
+                </mat-card>
             </div>
         </div>
         <div class="footer">

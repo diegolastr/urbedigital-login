@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; //modulo de forms 
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { RestService, User } from 'src/app/rest.service';
 
 @Component({
   selector: 'app-login-urbe',
@@ -7,24 +9,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'; //modulo de
   styleUrls: ['./login-urbe.component.css']
 })
 export class LoginUrbeComponent implements OnInit {
-  form: FormGroup
+  form: FormGroup;
 
-  constructor( private fb: FormBuilder) {  // formulario de validacion
-    this.form = this.fb.group({
-      user: ['', Validators.required], 
-      password: ['', Validators.required],
-    })
-   }
-
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder,
+    private RestServices: RestService,
+    private _snackBar: MatSnackBar) {
+    this.form = this.formBuilder.group({
+      usuario: ['', Validators.required],
+      clave: ['', Validators.required]
+    });
   }
-  
-  validate(){
-     
-    const user = this.form.value.user;
-    const password = this.form.value.password;
+  ngOnInit() {
+  }
+  sendData(form: any): void {
+    this.RestServices.login(form).subscribe(
+      response => {
+        this.RestServices.saveToken(response.headers.get('Authorization'));
+      }, error => {
 
-    
-    console.log(this.form);
-   }
+      }
+    );
+    console.log(form);
+    console.log('Datos enviados');
+    console.log('Authorization');
+  }
 }
