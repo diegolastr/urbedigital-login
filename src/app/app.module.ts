@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -20,9 +19,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     AppRoutingModule,
     LoginModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    MatSnackBarModule
-    
+    ReactiveFormsModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

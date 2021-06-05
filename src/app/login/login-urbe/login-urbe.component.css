@@ -1,5 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 .app{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     background-color: #001e44;
+    
+}
+
+.content-app{
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    /* display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center; */
+}
+.sticky-header{
+    flex-grow: 0;
+    z-index: 2;
 }
 .header{
     margin-top: 2px;
@@ -18,34 +44,70 @@
     margin: 5px;
     margin-top: 08px;
 }
-.body{
+
+.login_card{
+    width: 20em;
+    margin: 6em 0em;
+    padding: 28px;
+    text-align: center;
+    /* width: 100%;
+    max-width: 330px;
+    
+    margin: 5px; */
+}
+.login_content {
     display: flex;
     justify-content: center;
-    height: 100%;
     align-items: center;
+    flex-grow: 1;
 }
 
-.login{
+.width_form{
     width: 100%;
-    max-width: 330px;
-    text-align: center;
-    margin: 5px;
-}
-
-.width_class{
-    width: 80%;
 }
 
 .button{
-    height: 50px; ;
+    height: 50px;
 }
 
 .footer{
     background-color:   #af0d0d;
-    padding: 60px 40px;
+    padding: 20px 20px;
     color: #fff;
     text-align: center;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.footer-content{
+    justify-content: center;
+}
+
+.footer-brand p {
+    font-size:14px;
+    color:rgba(255,255,255,0.70);
+    margin-bottom: 4px;
+}
+
+.spinner{
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .login_card {
+        width: 75%;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .absolute {
+        position: relative;
+    }
 }

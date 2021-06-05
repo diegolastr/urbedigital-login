@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; //modulo de forms 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RestService, User } from 'src/app/rest.service';
+
 
 @Component({
   selector: 'app-login-urbe',
@@ -10,6 +12,7 @@ import { RestService, User } from 'src/app/rest.service';
 })
 export class LoginUrbeComponent implements OnInit {
   form: FormGroup;
+  loading = false;
 
   constructor(private formBuilder: FormBuilder,
     private RestServices: RestService,
@@ -25,12 +28,29 @@ export class LoginUrbeComponent implements OnInit {
     this.RestServices.login(form).subscribe(
       response => {
         this.RestServices.saveToken(response.headers.get('Authorization'));
+        this.fakeLoading();
+        console.log('Datos enviados');
+        console.log(form);
       }, error => {
-
+        this.errorStatus();
       }
     );
-    console.log(form);
-    console.log('Datos enviados');
-    console.log('Authorization');
+  }
+  errorStatus() {
+    this.form.reset();
+    this._snackBar.open('Usuario o contraseña ingresado invalidos', '', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    })
+
+  }
+
+  fakeLoading() {
+    this.loading = false;
+    setTimeout(() => {
+      // redireccionar a l dashboard
+      this.loading = true;
+    }, 1000);
   }
 }
