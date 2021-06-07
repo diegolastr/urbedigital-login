@@ -13,6 +13,7 @@ import { RestService, User } from 'src/app/rest.service';
 export class LoginUrbeComponent implements OnInit {
   form: FormGroup;
   loading = false;
+  hide= true;
 
   constructor(private formBuilder: FormBuilder,
     private RestServices: RestService,
