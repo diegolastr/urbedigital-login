@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
 //components
-import { LoginModule } from './login/login.module';
+import { AppComponent } from './app.component';
+
+
+
+
 
 
 @NgModule({
@@ -14,8 +22,10 @@ import { LoginModule } from './login/login.module';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    LoginModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
