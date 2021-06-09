@@ -19,8 +19,7 @@
                         <h1 class="">Iniciar Sesión</h1>
                         <mat-form-field class="width_form" appearance="fill">
                             <mat-label>Usuario</mat-label>
-                            <input type="text" name="userId" onkeypress="" matInput autocomplete="off"
-                                formControlName="usuario">
+                            <input type="text" onkeypress="" matInput autocomplete="off" oninput="this.value = this.value.toUpperCase()" pattern="[A-ZÑ]+" formControlName="usuario">
                         </mat-form-field>
                         <mat-form-field class="width_form" appearance="fill">
                             <mat-label>Contraseña</mat-label>
