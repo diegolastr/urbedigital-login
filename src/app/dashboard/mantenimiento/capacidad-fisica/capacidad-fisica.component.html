@@ -2,31 +2,32 @@
 <div class="content-app">
   <div class="dist-content">
     <div class="example-container mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource">
+      <mat-form-field>
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" autocomplete="off" #input>
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" matSort>
     
         <ng-container matColumnDef="espacio" sticky>
-          <th mat-header-cell *matHeaderCellDef> Espacio </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Espacio </th>
           <td mat-cell *matCellDef="let element"> {{element.espacio}} </td>
         </ng-container>
     
-      
         <ng-container matColumnDef="descripcion">
           <th mat-header-cell *matHeaderCellDef> Descripción del Espacio</th>
           <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
         </ng-container>
     
-       
         <ng-container matColumnDef="tipoEspacio">
           <th mat-header-cell *matHeaderCellDef> Tipo de Espacio</th>
           <td mat-cell *matCellDef="let element"> {{element.tipoEspacio}} </td>
         </ng-container>
     
-        
         <ng-container matColumnDef="edificio">
           <th mat-header-cell *matHeaderCellDef> Edificio </th>
           <td mat-cell *matCellDef="let element"> {{element.edificio}} </td>
         </ng-container>
-    
         
         <ng-container matColumnDef="piso">
           <th mat-header-cell *matHeaderCellDef> Piso</th>
@@ -48,9 +49,16 @@
           <td mat-cell *matCellDef="let element"> {{element.estado}}</td>
         </ng-container>
 
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element"></td>
+        </ng-container>
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"> 
+        </tr>
       </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
     </div>
   </div>
 </div>

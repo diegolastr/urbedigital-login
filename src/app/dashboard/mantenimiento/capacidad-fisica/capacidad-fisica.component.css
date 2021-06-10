@@ -22,9 +22,14 @@
     align-items: center;
     flex-grow: 1;
 }
-
+.mat-form-field {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 14px;
+  width: 50%;
+}
 table {
-    width: 800px;
+    width: 850px;
     justify-content: center;
     
   }
