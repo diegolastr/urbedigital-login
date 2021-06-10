@@ -9,7 +9,7 @@
 
       <table mat-table [dataSource]="dataSource" matSort>
     
-        <ng-container matColumnDef="espacio" sticky>
+        <ng-container matColumnDef="espacio">
           <th mat-header-cell *matHeaderCellDef mat-sort-header > Espacio </th>
           <td mat-cell *matCellDef="let element"> {{element.espacio}} </td>
         </ng-container>
