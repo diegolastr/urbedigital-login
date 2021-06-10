@@ -13,7 +13,8 @@ import { RestService } from '../rest.service';
 
 @NgModule({
   declarations: [
-    LoginUrbeComponent
+    LoginUrbeComponent,
+    
   ],
   imports: [
     CommonModule,
