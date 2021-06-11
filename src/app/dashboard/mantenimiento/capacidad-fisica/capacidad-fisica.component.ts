@@ -2,18 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-
-export interface PeriodicElement {
-  espacio: string;
-  descripcion: string;
-  tipoEspacio: string;
-  edificio: string;
-  piso: string;
-  tipoPuesto: string;
-  capacidad: string;
-  estado: string;
-}
-
+import { Espacios } from 'src/app/interfaces/espacios';
+import { CapacidadFisicaService } from 'src/app/services/capacidad-fisica.service';
 
 
 @Component({
@@ -23,21 +13,29 @@ export interface PeriodicElement {
 })
 export class CapacidadFisicaComponent implements OnInit {
 
-  ELEMENT_DATA: PeriodicElement[] = [
-    {espacio: 'Hydrogen',descripcion: '', tipoEspacio: 'a', edificio: 'H', piso:'', tipoPuesto:'', capacidad:'', estado:''},
-    {espacio: 'Hydrogen',descripcion: '', tipoEspacio: 'a', edificio: 'H', piso:'', tipoPuesto:'', capacidad:'', estado:''},
-  ];
+   listEspacios: Espacios[] = [];
 
   displayedColumns =
-  ['espacio', 'descripcion', 'tipoEspacio', 'edificio', 'piso', 'tipoPuesto', 'capacidad', 'estado', 'acciones'];
-  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+  ['acciones','espacio', 'descripcion', 'tipoEspacio', 'edificio', 'piso', 'tipoPuesto', 'capacidad', 'estado', ];
+  dataSource!: MatTableDataSource<any>
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() { }
+  constructor( private _CapacidadFisicaService: CapacidadFisicaService) { }
 
   ngOnInit(): void {
+    this.cargarEspacios();
+  }
+
+  cargarEspacios(){
+    this.listEspacios = this._CapacidadFisicaService.getEspacios();
+    this.dataSource = new MatTableDataSource(this.listEspacios)
+  }
+
+  editarEspacio(index: number){
+    console.log(index);
+
   }
 
   ngAfterViewInit() {

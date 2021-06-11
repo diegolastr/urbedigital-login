@@ -9,13 +9,15 @@ import { RouterModule } from '@angular/router';
 import { CapacidadFisicaComponent } from './capacidad-fisica.component';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { FooterComponent } from '../../footer/footer.component';
+import { EditarEspacioComponent } from './editar-espacio/editar-espacio.component';
 
 
 @NgModule({
   declarations: [
     CapacidadFisicaComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    EditarEspacioComponent
   ],
   imports: [
     CommonModule,

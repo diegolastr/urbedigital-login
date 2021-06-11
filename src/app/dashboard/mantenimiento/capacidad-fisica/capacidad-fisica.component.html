@@ -7,8 +7,19 @@
         <input matInput (keyup)="applyFilter($event)" autocomplete="off" #input>
       </mat-form-field>
 
+      
+
       <table mat-table [dataSource]="dataSource" matSort>
-    
+        
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones</th>
+          <td  mat-cell *matCellDef="let element; let i = index">
+            <a class="pointer" style="color: #1878b0;" matTooltip="Ver espacio"> <mat-icon>search</mat-icon></a>
+            <a routerLink="/dashboard/mantenimiento/capacidadFisica/editar" class="pointer" style="color: #1f516f;"matTooltip="Editar espacio" > <mat-icon>edit</mat-icon></a>
+            <a class="pointer" style="color: #e15639"matTooltip="Eliminar espacio"> <mat-icon>delete</mat-icon></a>
+          </td>
+        </ng-container>
+
         <ng-container matColumnDef="espacio">
           <th mat-header-cell *matHeaderCellDef mat-sort-header > Espacio </th>
           <td mat-cell *matCellDef="let element"> {{element.espacio}} </td>
@@ -47,11 +58,6 @@
         <ng-container matColumnDef="estado">
           <th mat-header-cell *matHeaderCellDef>Estado</th>
           <td mat-cell *matCellDef="let element"> {{element.estado}}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="acciones">
-          <th mat-header-cell *matHeaderCellDef> </th>
-          <td mat-cell *matCellDef="let element"></td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

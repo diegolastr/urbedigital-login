@@ -17,6 +17,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -33,7 +36,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatTooltipModule,
+    MatGridListModule
 
   ],exports:[
     CommonModule,
@@ -49,7 +54,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatTooltipModule,
+    MatGridListModule
   ]
 })
 export class SharedModule { }

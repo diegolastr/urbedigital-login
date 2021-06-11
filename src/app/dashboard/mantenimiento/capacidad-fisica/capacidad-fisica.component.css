@@ -9,13 +9,7 @@
     display: flex;
     flex-direction: column;
 }
-.content-app{
-    flex-grow: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-}
+
 .dist-content{
     display: flex;
     justify-content: center;
@@ -26,10 +20,10 @@
   margin-top: 10px;
   margin-left: 10px;
   font-size: 14px;
-  width: 50%;
+  width: 80%;
 }
 table {
-    width: 850px;
+    width: 950px;
     justify-content: center;
     
   }
@@ -49,8 +43,12 @@ table {
     padding-right: 8px;
   }
   
+  th{
+    text-align: center;
+  }
   th.mat-column-position, td.mat-column-position {
     padding-left: 8px;
+    
   }
   
   .mat-table-sticky-border-elem-right {
@@ -60,7 +58,10 @@ table {
   .mat-table-sticky-border-elem-left {
     border-right: 1px solid #e0e0e0;
   }
-
+  
+.pointer{
+  cursor: pointer;
+}
 
   @media (max-width: 700px) {
     .example-container {
