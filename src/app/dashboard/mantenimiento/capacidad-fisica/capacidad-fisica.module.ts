@@ -10,6 +10,7 @@ import { CapacidadFisicaComponent } from './capacidad-fisica.component';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { FooterComponent } from '../../footer/footer.component';
 import { EditarEspacioComponent } from './editar-espacio/editar-espacio.component';
+import { AgregarEspacioComponent } from './agregar-espacio/agregar-espacio.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { EditarEspacioComponent } from './editar-espacio/editar-espacio.componen
     CapacidadFisicaComponent,
     NavbarComponent,
     FooterComponent,
-    EditarEspacioComponent
+    EditarEspacioComponent,
+    AgregarEspacioComponent
   ],
   imports: [
     CommonModule,

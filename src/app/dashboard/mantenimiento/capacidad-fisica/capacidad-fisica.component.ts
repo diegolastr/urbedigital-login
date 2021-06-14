@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Espacios } from 'src/app/interfaces/espacios';
@@ -22,21 +23,31 @@ export class CapacidadFisicaComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor( private _CapacidadFisicaService: CapacidadFisicaService) { }
+  constructor( private _CapacidadFisicaService: CapacidadFisicaService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.cargarEspacios();
   }
 
   cargarEspacios(){
-    this.listEspacios = this._CapacidadFisicaService.getEspacios();
+    this.listEspacios = this._CapacidadFisicaService.getEspacio();
     this.dataSource = new MatTableDataSource(this.listEspacios)
   }
 
-  editarEspacio(index: number){
+  eliminarEspacio(index: number){
     console.log(index);
 
+    this._CapacidadFisicaService.eliminarEspacio(index);
+    this.cargarEspacios();
+
+    this._snackBar.open('Espacio eliminado con exito', '', {
+      duration: 1500,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    })
   }
+  
+
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;

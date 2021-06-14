@@ -3,10 +3,23 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+* {
+    padding: 0;
+    margin: 0;
+}
 .content-app{
     flex-grow: 1;
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+}
+.container{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 5px;
+
+}
+.example-spacer{
+    flex: 1 1 auto;
 }

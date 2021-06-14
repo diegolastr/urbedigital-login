@@ -1,13 +1,12 @@
-* {
-    padding: 0;
-    margin: 0;
-}
+
 .app{
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-right: 100px;
+    margin-left: 100px;
+    
 }
 
 .dist-content{
@@ -22,21 +21,21 @@
   font-size: 14px;
   width: 80%;
 }
-table {
+
+.table {
     width: 950px;
     justify-content: center;
     
   }
   .example-container {
-    height: 450px;
+    height: 550px;
     width: 550px;
     overflow: auto;
     max-width: 100%;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-block-end: 30px;
     justify-content: center;
   }
-  
   
   td.mat-column-star {
     width: 20px;
@@ -64,10 +63,23 @@ table {
 }
 
   @media (max-width: 700px) {
-    .example-container {
-        width: 60%;
+    .app {
+      width: 75%;
+      justify-content: center;
+      margin-right: 50px;
+      margin-left: 50px;
+
     }
-}
+    .title{
+      font-size: 14px;
+      justify-content: center;
+    }
+    
+    .example-container{
+      width: 100%;
+      
+    }
+  }
 @media screen and (max-width: 1000px) {
     .absolute {
         position: relative;

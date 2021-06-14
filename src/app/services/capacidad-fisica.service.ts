@@ -16,9 +16,17 @@ export class CapacidadFisicaService {
   ];
   constructor() { }
 
-  getEspacios(){
+  getEspacio(){
     return this.listEspacios.slice();
   }
+  eliminarEspacio(index: number){
+    this.listEspacios.splice(index, 1);
+    
 
+  }
+
+  agregarEspacio(espacio: Espacios){
+    this.listEspacios.unshift(espacio);
+  }
 }
 

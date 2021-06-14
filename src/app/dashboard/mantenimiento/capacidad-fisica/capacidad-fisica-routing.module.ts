@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AgregarEspacioComponent } from './agregar-espacio/agregar-espacio.component';
 import { CapacidadFisicaComponent } from './capacidad-fisica.component';
 import { EditarEspacioComponent } from './editar-espacio/editar-espacio.component';
 
@@ -10,6 +11,7 @@ const routes: Routes = [
     children: [
       {path:'dashboard/mantenimiento/capacidadFisica', component:CapacidadFisicaComponent},
       {path:'dashboard/mantenimiento/capacidadFisica/editar', component:EditarEspacioComponent},
+      {path:'dashboard/mantenimiento/capacidadFisica/agregar', component:AgregarEspacioComponent},
 
       
     ]
