@@ -5,77 +5,64 @@
             Agregar Espacio
         </span>
     </mat-toolbar>
-    <div class="espacio_content">
-        <mat-card class=" espacio_card mat-elevation-z4" style="margin-top: 10px;">
-            <mat-grid-list cols="4" rowHeight="65px">
+    <div class="content-app">
+        <div class="agg_content">
+            <mat-card class="agg_card mat-elevation-z4">
                 <form [formGroup]="form" (ngSubmit)="agregarEspacio()">
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
-                        <mat-form-field class="ancho">
-                            <mat-label> Espacio </mat-label>
-                            <input matInput autocomplete="off" formControlName="espacio">
-                        </mat-form-field>
-                    </mat-grid-tile>
-
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
-                        <mat-form-field class="ancho">
-                            <mat-label> Edificio </mat-label>
-                            <input matInput autocomplete="off" formControlName="edificio">
-                        </mat-form-field>
-                    </mat-grid-tile>
-                    <div class="img_div">
-                        <mat-grid-tile [colspan]="2" [rowspan]="5">
-                            <img class="img_espacio" src="../../../../../assets/img/espacio-img.png">
-                        </mat-grid-tile>
-                    </div>
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
-                        <mat-form-field class="ancho">
-                            <mat-label> Descripción del Espacio </mat-label>
-                            <input matInput autocomplete="off" formControlName="descripcion">
-                        </mat-form-field>
-                    </mat-grid-tile>
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
-                        <mat-form-field class="ancho">
-                            <mat-label> Piso </mat-label>
-                            <input matInput autocomplete="off" formControlName="piso">
-                        </mat-form-field>
-                    </mat-grid-tile>
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
-                        <mat-form-field class="ancho">
-                            <mat-label> Tipo de Espacio </mat-label>
-                            <input matInput autocomplete="off" formControlName="tipoEspacio">
-                        </mat-form-field>
-                    </mat-grid-tile>
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
-                        <mat-form-field class="ancho">
-                            <mat-label> Tipo de Puesto </mat-label>
-                            <input matInput autocomplete="off" formControlName="tipoPuesto">
-                        </mat-form-field>
-                    </mat-grid-tile>
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
-                        <mat-form-field class="ancho">
-                            <mat-label>Estado</mat-label>
-                            <mat-select formControlName="estado">
-                                <mat-option *ngFor="let item of estado" [value]="item">
-                                    {{item}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </mat-grid-tile>
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
-                        <mat-form-field class="ancho">
-                            <mat-label> Capacidad </mat-label>
-                            <input matInput autocomplete="off" formControlName="capacidad">
-                        </mat-form-field>
-                    </mat-grid-tile>
-                    <mat-grid-tile [colspan]="2" [rowspan]="1">
-                        <button mat-raised-button style="margin-right:5px;"
-                            routerLink="/dashboard/mantenimiento/capacidadFisica">Regresar</button>
-                            <button style="margin-left:5px;" type="submit" [disabled]="form.invalid" mat-raised-button
-                            color="primary">Aceptar</button>
-                    </mat-grid-tile>
+                    <img class="img_espacio" src="../../../../../assets/img/espacio-img.png">
+                    <table>
+                        <tr>
+                            <td>
+                                <mat-form-field class="ancho">
+                                    <mat-label> Espacio </mat-label>
+                                    <input matInput autocomplete="off" formControlName="espacio">
+                                </mat-form-field>
+                                <mat-form-field class="ancho">
+                                    <mat-label> Edificio </mat-label>
+                                    <input matInput autocomplete="off" formControlName="edificio">
+                                </mat-form-field>
+                                <mat-form-field class="ancho">
+                                    <mat-label> Piso </mat-label>
+                                    <input matInput autocomplete="off" formControlName="piso">
+                                </mat-form-field>
+                                <mat-form-field class="ancho">
+                                    <mat-label> Tipo de Espacio </mat-label>
+                                    <input matInput autocomplete="off" formControlName="tipoEspacio">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="ancho">
+                                    <mat-label> Tipo de Puesto </mat-label>
+                                    <input matInput autocomplete="off" formControlName="tipoPuesto">
+                                </mat-form-field>
+                                <mat-form-field class="ancho">
+                                    <mat-label>Estado</mat-label>
+                                    <mat-select formControlName="estado">
+                                        <mat-option *ngFor="let item of estado" [value]="item">
+                                            {{item}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field class="ancho">
+                                    <mat-label> Capacidad </mat-label>
+                                    <input matInput autocomplete="off" formControlName="capacidad">
+                                </mat-form-field>
+                                <mat-form-field class="ancho">
+                                    <mat-label> Descripción del Espacio </mat-label>
+                                    <input matInput autocomplete="off" formControlName="descripcion">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                    <button mat-raised-button style="margin-right:5px;"
+                        routerLink="/dashboard/mantenimiento/capacidadFisica">Regresar</button>
+                    <button style="margin-left:5px;" type="submit" [disabled]="form.invalid" mat-raised-button
+                        color="primary">Aceptar</button>
                 </form>
-            </mat-grid-list>
-        </mat-card>
+            </mat-card>
+        </div>
+
     </div>
+
 </div>
 <app-footer></app-footer>
