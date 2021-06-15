@@ -43,7 +43,7 @@ export class CapacidadFisicaComponent implements OnInit {
     this._snackBar.open('Espacio eliminado con exito', '', {
       duration: 1500,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      verticalPosition: 'top'
     })
   }
   

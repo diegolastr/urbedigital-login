@@ -13,13 +13,6 @@
     padding: 10px;
 }
 
-.content-app{
-    flex-grow: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-}
 
 .agg_content{
     display: flex;
@@ -28,26 +21,22 @@
     flex-grow: 1;
 }
 .agg_card{
-    width: 95%;
+    width: 75%;
     padding: 10px;
     text-align: center;
     margin: 2em 0em;
 }
 @media (max-width: 700px) {
     
-    table{
-        display: flex;
-        width: 50%;
-    }
     .agg_card{
         display: flex;
-        width: 80%;
+        width: 100%;
     }
+  
 }
-
 @media (max-width: 700px) {
-    .espacio_content {
-        width: 60%;
+    .agg_content {
+        width: 100%;
         position: absolute;
     }
     .img_espacio{
