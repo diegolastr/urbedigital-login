@@ -1,61 +1,21 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-.app{
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+
+.container, body{
     background-color: #001e44;
-    
 }
 
-.content-app{
-    flex-grow: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    /* display: flex;
-    justify-content: center;
-    height: 100%;
-    align-items: center; */
-}
 .sticky-header{
     flex-grow: 0;
     z-index: 2;
     position: relative;
 }
-.header{
-    margin-top: 2px;
-    box-shadow: 2px 2px 5px rgb(121, 121, 121);
-    background-color: #fff!important;
-    flex: 1 1 auto;
-}
-
-.navbar-logo{
-    width: 190px;
-    margin: 5px;
-}
-
-.logo-urbe{
-    width: 180px;
-    margin: 5px;
-    margin-top: 08px;
-}
 
 .login_card{
     width: 20em;
-    margin: 6em 0em;
-    padding: 28px;
+    margin: 4em 0em;
+    padding: 10px;
     text-align: center;
-    /* width: 100%;
-    max-width: 330px;
-    
-    margin: 5px; */
 }
+
 .login_content {
     display: flex;
     justify-content: center;
@@ -98,14 +58,19 @@
 
 @media (max-width: 700px) {
     .login_card {
-        width: 75%;
+        width: 80%;
+        display: flex;
     }
-}
-
-@media (max-width: 700px) {
-    .footer {
-        display: none;
+    img, mat-form-fiel{
+        width: 35%;
     }
+    .login_content{
+        width: 100%;
+    }
+    .footer{
+        position: relative;
+    }
+   
 }
 
 @media screen and (max-width: 1000px) {

@@ -15,14 +15,14 @@ import { RestService } from '../rest.service';
 @NgModule({
   declarations: [
     LoginUrbeComponent,
-    
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     SharedModule,
     RouterModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    
   ],
   providers: [
     RestService

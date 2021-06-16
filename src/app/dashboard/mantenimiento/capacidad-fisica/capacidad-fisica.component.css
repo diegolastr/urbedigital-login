@@ -57,13 +57,7 @@
   cursor: pointer;
 }
 
-  @media (max-width: 700px) {
-    
-    .title{
-      font-size: 14px;
-      justify-content: center;
-    }
-    
+  @media (max-width: 700px) {    
     .example-container{
       width: 100%;
       

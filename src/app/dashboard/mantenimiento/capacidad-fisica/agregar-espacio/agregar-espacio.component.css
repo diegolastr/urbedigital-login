@@ -8,12 +8,6 @@
     padding: 5px;
 }
 
-.espacio_card{
-    margin: 2em 0em;
-    padding: 10px;
-}
-
-
 .agg_content{
     display: flex;
     justify-content: center;
@@ -37,7 +31,6 @@
 @media (max-width: 700px) {
     .agg_content {
         width: 100%;
-        position: absolute;
     }
     .img_espacio{
         display: none;

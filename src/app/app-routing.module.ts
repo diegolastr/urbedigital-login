@@ -7,7 +7,6 @@ const routes: Routes = [
   {path:'',
   loadChildren:() => import('./dashboard/mantenimiento/capacidad-fisica/capacidad-fisica.module').then(m => m.CapacidadFisicaModule)},
   {path: '', redirectTo:'login', pathMatch:'full'},
-  {path: '**', redirectTo:'login', pathMatch:'full'}
 ];
 
 @NgModule({

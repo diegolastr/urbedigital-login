@@ -9,7 +9,6 @@ import { RouterModule } from '@angular/router';
 import { CapacidadFisicaComponent } from './capacidad-fisica.component';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { FooterComponent } from '../../footer/footer.component';
-import { EditarEspacioComponent } from './editar-espacio/editar-espacio.component';
 import { AgregarEspacioComponent } from './agregar-espacio/agregar-espacio.component';
 
 
@@ -18,7 +17,6 @@ import { AgregarEspacioComponent } from './agregar-espacio/agregar-espacio.compo
     CapacidadFisicaComponent,
     NavbarComponent,
     FooterComponent,
-    EditarEspacioComponent,
     AgregarEspacioComponent
   ],
   imports: [

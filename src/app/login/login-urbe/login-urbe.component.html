@@ -1,51 +1,44 @@
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urbe Digital</title>
-</head>
 
-<body>
-    <div class="app">
-        <mat-toolbar class="mat-elevation-z6 sticky-header">
-            <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-            <span>Urbe Digital</span>
-        </mat-toolbar>
-        <div class="content-app">
-            <div class="login_content">
-                <mat-card *ngIf="!loading" class="login_card mat-elevation-z4">
-                    <form [formGroup]="form">
-                        <img src="../../../assets/img/user.png" width=50%>
-                        <h1 class="">Iniciar Sesión</h1>
-                        <mat-form-field class="width_form" appearance="fill">
-                            <mat-label>Usuario</mat-label>
-                            <input type="text" onkeypress="" matInput autocomplete="off" oninput="this.value = this.value.toUpperCase()" pattern="[A-ZÑ]+" formControlName="usuario">
-                        </mat-form-field>
-                        <mat-form-field class="width_form" appearance="fill">
-                            <mat-label>Contraseña</mat-label>
-                            <input matInput [type]="hide ? 'password' : 'text'" matInput autocomplete="off"
-                                formControlName="clave">
-                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                                [attr.aria-pressed]="hide">
-                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button>
-                        </mat-form-field>
-                        <br>
-                        <button type="button" (click)="sendData(form.value)" class="width_form button" mat-raised-button
-                            color="primary" [disabled]="form.invalid">Ingresar</button>
-                    </form>
-                </mat-card>
-                <mat-spinner *ngIf="loading" class="spinner" diameter=50></mat-spinner>
-            </div>
+    <div class="container">
+    <mat-toolbar class="mat-elevation-z6 sticky-header">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+        <span>Urbe Digital</span>
+    </mat-toolbar>
+    <div class="content-app">
+        <div class="login_content">
+            <mat-card *ngIf="!loading" class="login_card mat-elevation-z4">
+                <form [formGroup]="form">
+                    <img src="../../../assets/img/user.png" width=50%>
+                    <h1 class="">Iniciar Sesión</h1>
+                    <mat-form-field class="width_form" appearance="fill">
+                        <mat-label>Usuario</mat-label>
+                        <input type="text" onkeypress="" matInput autocomplete="off"
+                            oninput="this.value = this.value.toUpperCase()" pattern="[A-ZÑ]+" formControlName="usuario">
+                    </mat-form-field>
+                    <mat-form-field class="width_form" appearance="fill">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" matInput autocomplete="off"
+                            formControlName="clave">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <br>
+                    <button type="button" (click)="sendData(form.value)" class="width_form button" mat-raised-button
+                        color="primary" [disabled]="form.invalid">Ingresar</button>
+                </form>
+            </mat-card>
+            <mat-spinner *ngIf="loading" class="spinner" diameter=50></mat-spinner>
         </div>
     </div>
     <div class="footer">
-            <div class="footer-content">
-                <div class=" footer-brand">
-                    <p>Universidad Privada Dr. Rafael Belloso Chacín.
-                    <p>Dirección de Tecnologías de la Información Unidad de Servicios Web.</p>
-                    <p>© 2021 Powered by Servieduca All rights reserved.</p>
-                </div>
+        <div class="footer-content">
+            <div class=" footer-brand">
+                <p>Universidad Privada Dr. Rafael Belloso Chacín.
+                <p>Dirección de Tecnologías de la Información Unidad de Servicios Web.</p>
+                <p>© 2021 Powered by Servieduca All rights reserved.</p>
             </div>
         </div>
-</body>
+    </div>
+</div>
